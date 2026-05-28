@@ -24,13 +24,14 @@ while True:
         nome_produto = input("Digite o nome do produto a venda: ")
         encontrado = False
         for p in produtos:
-            encontrado = True
-            if p[2]> 0:
-                p[2]-=1
-                print(f"Venda realizada {nome_produto} agora tem {p[2]} unidades disponíveis")
-            else:
-                print("Produto sem estoque")
-            break
+            if p[0]== nome_produto:
+                encontrado = True
+                if p[2]> 0:
+                 p[2] -=1
+                 print(f"Venda realizada {nome_produto} agora tem {p[2]} unidades disponíveis")
+                else:
+                    print("Produto sem estoque")
+                    break
         if not encontrado:
             print("Estoque não encontrado")
     elif opcao == "4":
